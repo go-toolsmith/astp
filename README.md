@@ -35,10 +35,5 @@ func main() {
 	if astp.IsGenDecl(strparse.Decl(`var x int = 10`)) {
 		fmt.Println("gen decl")
 	}
-
-	// Output:
-	// ident
-	// block stmt
-	// gen decl
 }
 ```
