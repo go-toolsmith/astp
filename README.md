@@ -1,5 +1,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-toolsmith/astp)](https://goreportcard.com/report/github.com/go-toolsmith/astp)
 [![GoDoc](https://godoc.org/github.com/go-toolsmith/astp?status.svg)](https://godoc.org/github.com/go-toolsmith/astp)
+[![Build Status](https://travis-ci.org/go-toolsmith/astp.svg?branch=master)](https://travis-ci.org/go-toolsmith/astp)
+
 
 # astp
 
