@@ -16,24 +16,29 @@ go get github.com/go-toolsmith/astp
 ## Example
 
 ```go
-import "github.com/go-toolsmith/astp"
+package main
 
-func Walk(var node ast.Node) {
-    switch {
-    case astp.IsValueSpec(node):
-        value := node.(*ast.ValueSpec)
+import (
+	"fmt"
 
-        for _, name := range value.Names {
-            if name != nil {
-                println("value name: " + name.Name)
-            }
-        }
+	"github.com/go-toolsmith/astp"
+	"github.com/go-toolsmith/strparse"
+)
 
-    case astp.IsFuncDecl(node):
-        fn := node.(*ast.FuncDecl)
-        if fn.Name != nil {
-            println("function: " + fn.Name.Name)
-        }
-    }
+func main() {
+	if astp.IsIdent(strparse.Expr(`x`)) {
+		fmt.Println("ident")
+	}
+	if astp.IsBlockStmt(strparse.Stmt(`{f()}`)) {
+		fmt.Println("block stmt")
+	}
+	if astp.IsGenDecl(strparse.Decl(`var x int = 10`)) {
+		fmt.Println("gen decl")
+	}
+
+	// Output:
+	// ident
+	// block stmt
+	// gen decl
 }
 ```
